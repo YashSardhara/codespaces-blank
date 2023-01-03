@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import Interface from './component/Interface';
@@ -28,9 +29,9 @@ const steps = [
       id: '3',
       message: " hi {previousValue}, how can I help you?",
       end : true,
-  }, 
+  },
 ];
- 
+
 // Creating our own theme
 const theme = {
     background: 'white',
@@ -42,17 +43,17 @@ const theme = {
     userBubbleColor: 'grey',
     userFontColor: 'white',
 };
- 
+
 // Set some properties of the bot
 const config = {
     botAvatar: "avt.png",
     floating: true,
 };
- 
+
 function App() {
     return (
         <div className="App">
-          <p1 className="para"> Add Q&A </p1>
+          <p className="para"> Add Q&A </p>
           <Interface />
             <ThemeProvider theme={theme}>
                 <ChatBot
@@ -61,11 +62,11 @@ function App() {
                     headerTitle="Let's Talk"
                     steps={steps}
                     {...config}
- 
+
                 />
             </ThemeProvider>
         </div>
     );
 }
- 
+
 export default App;
